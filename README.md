@@ -1,5 +1,5 @@
 
-See original repository https://github.com/WooshiiDev/HierarchyDecorator.
+See original repository https://github.com/WooshiiDev/HierarchyDecorator
 
 Changes: dont ship to build, settings place, tags info, hideflags info. 
 
