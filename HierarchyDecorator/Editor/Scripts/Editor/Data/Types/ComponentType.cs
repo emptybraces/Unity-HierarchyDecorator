@@ -24,7 +24,7 @@ namespace HierarchyDecorator
 
         [SerializeField] private bool isBuiltIn;
         [SerializeField] private MonoScript script;
-        [SerializeField] private int hash = -1;
+        // [SerializeField] private int hash = -1;
 
         // Properties
 

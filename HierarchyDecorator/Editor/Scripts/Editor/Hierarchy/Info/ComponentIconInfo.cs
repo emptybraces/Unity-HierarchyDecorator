@@ -17,7 +17,7 @@ namespace HierarchyDecorator
         private Component[] components = new Component[0];
         private int validComponentCount;
 
-        private bool hasMonoBehaviour = false;
+        // private bool hasMonoBehaviour = false;
 
 #if UNITY_2019_1_OR_NEWER
         private GUIContent warningGUI = EditorGUIUtility.IconContent ("warning");
@@ -139,7 +139,7 @@ namespace HierarchyDecorator
 
             components = instance.GetComponents<Component> ();
             componentTypes.Clear ();
-            hasMonoBehaviour = false;
+            // hasMonoBehaviour = false;
         }
 
         // GUI

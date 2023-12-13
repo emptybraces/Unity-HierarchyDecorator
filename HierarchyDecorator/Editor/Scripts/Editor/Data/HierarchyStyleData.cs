@@ -31,6 +31,8 @@ namespace HierarchyDecorator
     [System.Serializable]
     public class HierarchyStyleData
     {
+        public bool displayHideFlags = true;
+        public bool displayTags = true;
         public bool displayLayers = true;
         public bool displayIcons = true;
 

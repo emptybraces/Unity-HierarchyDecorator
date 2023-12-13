@@ -12,7 +12,7 @@ namespace HierarchyDecorator
     internal static class HierarchyDecorator
     {
         public const string SETTINGS_TYPE_STRING = "Settings";
-        public const string SETTINGS_NAME_STRING = "Settings";
+        public const string SETTINGS_NAME_STRING = "HierarchyDecorator_Settings";
 
         private static Settings Settings;
 
@@ -32,7 +32,9 @@ namespace HierarchyDecorator
 
         private static HierarchyInfo[] Info = new HierarchyInfo[]    
         {
+            new HideFlagsInfo(),
             new LayerInfo(),
+            new TagInfo(),
             new ComponentIconInfo()
         };
     

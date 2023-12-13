@@ -18,6 +18,16 @@ namespace HierarchyDecorator
             CreateDrawableGroup ("Layers")
                 .RegisterSerializedProperty (serializedTab, "showLayers", "clickToSelectLayer", "applyChildLayers");
 
+            // --- Tags
+
+            CreateDrawableGroup ("Tags")
+                .RegisterSerializedProperty (serializedTab, "showTags");
+
+            // --- HideFlags
+
+            CreateDrawableGroup ("HideFlags")
+                .RegisterSerializedProperty (serializedTab, "showHideFlags", "clickToSelectHideFlags");
+
             // --- Breadcrumbs
 
             SerializedProperty crumbA = serializedTab.FindPropertyRelative("instanceBreadcrumbs");

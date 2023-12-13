@@ -47,6 +47,13 @@ namespace HierarchyDecorator
         public bool clickToSelectLayer = true;
         public bool applyChildLayers = true;
 
+		// Tags
+        public bool showTags = true;
+
+		// Hideflgas
+        public bool showHideFlags = true;
+        public bool clickToSelectHideFlags = true;
+
         // Components 
 
         public bool showAllComponents = true;
