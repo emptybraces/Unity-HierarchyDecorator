@@ -1,9 +1,10 @@
 {
-  "name": "com.wooshii.hierarchydecorator",
+  "name": "com.emptybraces.hierarchydecorator",
   "displayName": "HierarchyDecorator",
-  "version": "0.9.1",
+  "author": "emptybraces",
+  "version": "1.0.0",
   "unity": "2018.4",
-  "description": "HierarchyDecorator is an extension for the Unity Hierarchy enhancing it's utility.",
+  "description": "Fork from HierarchyDecorator. See https://github.com/WooshiiDev/HierarchyDecorator",
   "keywords": [
     "hierarchy",
     "editor"
