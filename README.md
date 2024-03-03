@@ -9,5 +9,5 @@ Changes: dont ship to build, settings place, tags info, hideflags info.
 Install via Unity Package Manager:
 
 ```
-https://github.com/emptybraces/Unity_HierarchyDecorator.git
+https://github.com/emptybraces/Unity_HierarchyDecorator.git?path=upm
 ```
