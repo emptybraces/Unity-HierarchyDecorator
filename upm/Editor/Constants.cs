@@ -80,18 +80,19 @@ namespace HierarchyDecorator
 		};
 	}
 
-	internal static class Textures
-	{
-		internal readonly static Texture2D CheckboxEmpty = Resources.Load<Texture2D>("Icons/checkbox_filled");
-		internal readonly static Texture2D CheckboxFilled = Resources.Load<Texture2D>("Icons/checkbox_empty");
+	// internal static class Textures
+	// {
+		// internal readonly static Texture2D CheckboxEmpty = Resources.Load<Texture2D>("Icons/checkbox_filled");
+		// internal readonly static Texture2D CheckboxFilled = Resources.Load<Texture2D>("Icons/checkbox_empty");
 
-		internal readonly static Texture2D Checked = Resources.Load<Texture2D>("Icons/checked");
-		internal readonly static Texture2D Checkbox = Resources.Load<Texture2D>("Icons/checkBox");
+		// internal readonly static Texture2D Checked = Resources.Load<Texture2D>("Icons/checked");
+		// internal readonly static Texture2D Checkbox = Resources.Load<Texture2D>("Icons/checkBox");
 
-		internal readonly static Texture2D Checkmark = Resources.Load<Texture2D>("Icons/checkmark");
+		// internal readonly static Texture2D Checkmark = Resources.Load<Texture2D>("Icons/checkmark");
 
-		internal readonly static Texture2D Banner = Resources.Load<Texture2D>("HierarchyDecoratorLogo");
-	}
+		// internal readonly static Texture2D Banner = Resources.Load<Texture2D>("HierarchyDecoratorLogo");
+		// internal readonly static Texture2D Bannfer = Load<Texture2D>("HierarchyDecoratorLogo");
+	// }
 
 	//TODO: [Wooshii] Add comment descriptions for styles.
 	internal static class Style
