@@ -114,14 +114,10 @@ namespace HierarchyDecorator
 
             if (hasStyle)
             {
-				int len = style.prefix.Length;
-				if (len < name.Length)
-				{
-					labelStyle = style.style;
-					name = style.FormatString(name.Substring(len + 1, name.Length - len - 1));
-				}
-				else
-					labelStyle = EditorStyles.label;
+                labelStyle = style.style;
+
+                int len = style.prefix.Length;
+                name = style.FormatString(name.Substring (len + 1, name.Length - len - 1));
             }
             else
             {
