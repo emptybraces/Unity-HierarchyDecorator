@@ -124,6 +124,11 @@ namespace HierarchyDecorator
             {
                 prefix = prefix.TrimStart ().Split (' ')[0];
             }
+			else
+			{
+				style = null;
+				return false;
+			}
 
             for (int i = 0; i < styles.Count; i++)
             {
