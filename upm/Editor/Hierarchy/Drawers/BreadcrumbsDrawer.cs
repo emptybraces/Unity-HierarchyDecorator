@@ -34,8 +34,6 @@ namespace HierarchyDecorator
             GlobalData data = _settings.globalData;
 
             Transform transform = current.Transform;
-			if (transform == null)
-				return;
 
             int depth = current.CalculateDepth();
 
