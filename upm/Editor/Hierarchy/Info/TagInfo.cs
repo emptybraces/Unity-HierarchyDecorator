@@ -5,21 +5,25 @@ namespace HierarchyDecorator
 {
 	public class TagInfo : HierarchyInfo
 	{
+		GUIStyle _style;
 		protected override void DrawInfo(Rect rect, GameObject instance, Settings settings)
 		{
 			if (rect.x < (LabelRect.x + LabelRect.width))
 			{
 				return;
 			}
-
-			EditorGUI.LabelField(rect, instance.tag == "Untagged" ? "-" : instance.tag, Style.CenteredSmallLabel);
+			if (_style == null)
+				_style = new GUIStyle(Style.SmallDropdown) { wordWrap = true };
+			var label_text = instance.tag == "Untagged" ? "-" : instance.tag;
+			CalculateFontSizeToFitWidth(_style, rect.width, label_text);
+			EditorGUI.LabelField(rect, label_text, _style);
 
 			// とりあえず表示だけ
 		}
 
 		protected override int GetGridCount()
 		{
-			return 3;
+			return 5;
 		}
 
 		protected override bool DrawerIsEnabled(Settings settings, GameObject instance)
@@ -30,5 +34,6 @@ namespace HierarchyDecorator
 			}
 			return settings.globalData.showTags;
 		}
+
 	}
 }

@@ -3,85 +3,90 @@ using UnityEngine;
 
 namespace HierarchyDecorator
 {
-    public class LayerInfo : HierarchyInfo
-    {
-        protected override void DrawInfo(Rect rect, GameObject instance, Settings settings)
-        {
-            if (rect.x < (LabelRect.x + LabelRect.width))
-            {
-                return;
-            }
+	public class LayerInfo : HierarchyInfo
+	{
+		GUIStyle _style;
+		protected override void DrawInfo(Rect rect, GameObject instance, Settings settings)
+		{
+			if (rect.x < (LabelRect.x + LabelRect.width))
+			{
+				return;
+			}
 
-            EditorGUI.LabelField (rect, LayerMask.LayerToName (instance.layer), Style.SmallDropdown);
+			if (_style == null)
+				_style = new GUIStyle(Style.SmallDropdown) { wordWrap = true };
+			var label_text = LayerMask.LayerToName(instance.layer);
+			CalculateFontSizeToFitWidth(_style, rect.width, label_text);
+			EditorGUI.LabelField(rect, label_text, _style);
 
-            if (settings.globalData.clickToSelectLayer)
-            {
-                Event e = Event.current;
-                bool hasClicked = rect.Contains (e.mousePosition) && e.type == EventType.MouseDown;
+			if (settings.globalData.clickToSelectLayer)
+			{
+				Event e = Event.current;
+				bool hasClicked = rect.Contains(e.mousePosition) && e.type == EventType.MouseDown;
 
-                if (!hasClicked)
-                {
-                    return;
-                }
+				if (!hasClicked)
+				{
+					return;
+				}
 
-                GameObject[] selection = Selection.gameObjects;
+				GameObject[] selection = Selection.gameObjects;
 
-                if (selection.Length < 2)
-                {
-                    Selection.SetActiveObjectWithContext (instance, null);
-                }
+				if (selection.Length < 2)
+				{
+					Selection.SetActiveObjectWithContext(instance, null);
+				}
 
-                GenericMenu menu = new GenericMenu ();
-                bool setChildLayers = settings.globalData.applyChildLayers;
+				GenericMenu menu = new GenericMenu();
+				bool setChildLayers = settings.globalData.applyChildLayers;
 
-                foreach (System.String layer in Constants.LayerMasks)
-                {
-                    int index = LayerMask.NameToLayer (layer);
+				foreach (System.String layer in Constants.LayerMasks)
+				{
+					int index = LayerMask.NameToLayer(layer);
 
-                    menu.AddItem (new GUIContent (layer), false, () =>
-                        {
-                            Undo.RecordObjects (Selection.gameObjects, "Layer Updated");
+					menu.AddItem(new GUIContent(layer), false, () =>
+						{
+							Undo.RecordObjects(Selection.gameObjects, "Layer Updated");
 
-                            foreach (GameObject go in Selection.gameObjects)
-                            {
-                                go.layer = index;
+							foreach (GameObject go in Selection.gameObjects)
+							{
+								go.layer = index;
 
-                                if (setChildLayers)
-                                {
-                                    Undo.RecordObjects (Selection.gameObjects, "Layer Updated");
+								if (setChildLayers)
+								{
+									Undo.RecordObjects(Selection.gameObjects, "Layer Updated");
 
-                                    foreach (Transform child in go.transform)
-                                    {
-                                        child.gameObject.layer = index;
-                                    }
-                                }
+									foreach (Transform child in go.transform)
+									{
+										child.gameObject.layer = index;
+									}
+								}
 
-                                if (Selection.gameObjects.Length == 1)
-                                {
-                                    Selection.SetActiveObjectWithContext (null, null);
-                                }
-                            }
-                        });
-                }
+								if (Selection.gameObjects.Length == 1)
+								{
+									Selection.SetActiveObjectWithContext(null, null);
+								}
+							}
+						});
+				}
 
-                menu.ShowAsContext ();
-                e.Use ();
-            }
-        }
+				menu.ShowAsContext();
+				e.Use();
+			}
+		}
 
-        protected override int GetGridCount()
-        {
-            return 3;
-        }
+		protected override int GetGridCount()
+		{
+			return 5;
+		}
 
-        protected override bool DrawerIsEnabled(Settings settings, GameObject instance)
-        {
-            if (settings.styleData.HasStyle (instance.name) && !settings.styleData.displayLayers)
-            {
-                return false;
-            }
+		protected override bool DrawerIsEnabled(Settings settings, GameObject instance)
+		{
+			if (settings.styleData.HasStyle(instance.name) && !settings.styleData.displayLayers)
+			{
+				return false;
+			}
 
-            return settings.globalData.showLayers;
-        }
-    }
+			return settings.globalData.showLayers;
+		}
+	}
 }

@@ -31,7 +31,6 @@ namespace HierarchyDecorator
             {
                 return components.Length;
             }
-
             return validComponentCount;
         }
 
