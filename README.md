@@ -9,5 +9,5 @@ Changes: Dont ship to build, Remove Resources folder, Changed place the settings
 Install via Unity Package Manager:
 
 ```
-https://github.com/emptybraces/Unity_HierarchyDecorator.git?path=upm
+https://github.com/emptybraces/Unity-HierarchyDecorator.git?path=upm
 ```
