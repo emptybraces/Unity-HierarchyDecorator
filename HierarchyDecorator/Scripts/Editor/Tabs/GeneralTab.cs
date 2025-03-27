@@ -23,6 +23,9 @@ namespace HierarchyDecorator
                 .RegisterSerializedProperty(serializedTab, LayerFields).Space()
                 .RegisterSerializedProperty(serializedTab, "tagLayerLayout");
 
+            CreateDrawableGroup("Hide Flags")
+                .RegisterSerializedProperty(serializedTab, nameof(GlobalData.showHideFlags));
+
             // --- Breadcrumbs
 
             SerializedProperty crumbA = serializedTab.FindPropertyRelative("instanceBreadcrumbs");

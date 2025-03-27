@@ -29,8 +29,6 @@ namespace HierarchyDecorator
     {
         // Toggles
 
-        public bool showActiveToggles = true;
-
         [Tooltip("Clicking and dragging over check boxes to toggle them.")]
         public bool activeSwiping = true;
 
@@ -49,6 +47,9 @@ namespace HierarchyDecorator
         public bool showTags = true;
         public bool showLayers = true;
         public bool applyChildLayers = true;
+
+		// Hide flags
+        public bool showHideFlags = true;
 
         // Components 
 

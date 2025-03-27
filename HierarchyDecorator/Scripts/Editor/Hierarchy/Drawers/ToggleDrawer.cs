@@ -37,7 +37,7 @@ namespace HierarchyDecorator
 
         protected override bool DrawerIsEnabled(HierarchyItem item, Settings settings)
         {
-            return settings.globalData.showActiveToggles && PrefabStageUtility.GetCurrentPrefabStage () == null;
+            return settings.styleData.displayHideFlags && PrefabStageUtility.GetCurrentPrefabStage () == null;
         }
 
         protected override void DrawInternal(Rect rect, HierarchyItem item, Settings settings)
