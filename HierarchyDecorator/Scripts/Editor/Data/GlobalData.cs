@@ -69,25 +69,28 @@ namespace HierarchyDecorator
         // Toggles
 
         public bool showActiveToggles = true;
-        public enum ToggleType {Checkbox, Dot}
+        public enum ToggleType { Checkbox, Dot }
         public ToggleType activeToggleType = ToggleType.Checkbox;
 
         [Tooltip("Clicking and dragging over check boxes to toggle them.")]
         public bool activeSwiping = true;
 
-        [Tooltip ("Only toggle the instances with the same state as the first selected.")]
+        [Tooltip("Only toggle the instances with the same state as the first selected.")]
         public bool swipeSameState = true;
 
-        [Tooltip ("If a selection exists, only toggle the selected instances.")]
+        [Tooltip("If a selection exists, only toggle the selected instances.")]
         public bool swipeSelectionOnly = true;
 
-        [Tooltip ("The accepted criteria for selecting instances when swiping.")]
+        [Tooltip("The accepted criteria for selecting instances when swiping.")]
         public DepthMode depthMode;
 
         // Tags & Layers
         public TagLayerLayout tagLayerLayout;
         public TagSettings tagSettings;
         public LayerSettings layerSettings;
+
+        // Hide flags
+        public bool showHideFlags = true;
 
         // Components 
 

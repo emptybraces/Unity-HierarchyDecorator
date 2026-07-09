@@ -1,0 +1,14 @@
+{
+  "name": "com.emptybraces.hierarchydecorator",
+  "displayName": "HierarchyDecorator",
+  "author": "emptybraces",
+  "version": "1.3.0",
+  "unity": "2023.2",
+  "description": "Fork from HierarchyDecorator. See https://github.com/WooshiiDev/HierarchyDecorator",
+  "keywords": [
+    "hierarchy",
+    "editor"
+  ],
+  "category": "Editor",
+  "dependencies": {}
+}

@@ -14,6 +14,8 @@ namespace HierarchyDecorator
 
         public static readonly GUIStyle CenteredBoldLabel;
         public static readonly GUIStyle CenteredLabel;
+		public static readonly GUIStyle CenteredSmallLabel;
+		public static readonly GUIStyle CenteredLabelRed;
         
         public static readonly GUIStyle TinyText;
         public static readonly GUIStyle SmallDropdown;
@@ -133,7 +135,20 @@ namespace HierarchyDecorator
                 fontStyle = FontStyle.Bold,
             };
 
-            SmallDropdown = new GUIStyle(EditorStyles.centeredGreyMiniLabel)
+			CenteredSmallLabel = new GUIStyle(EditorStyles.centeredGreyMiniLabel)
+			{
+				fixedHeight = 0,
+				fontSize = 9,
+				alignment = TextAnchor.MiddleCenter
+			};
+			CenteredLabelRed = new GUIStyle(EditorStyles.centeredGreyMiniLabel)
+			{
+				fixedHeight = 0,
+				alignment = TextAnchor.MiddleCenter,
+				normal = { textColor = new Color(1f, 0f, 0f) }
+			};
+
+			SmallDropdown = new GUIStyle(EditorStyles.centeredGreyMiniLabel)
             {
                 alignment = TextAnchor.MiddleCenter,
                 fontSize = 9,
